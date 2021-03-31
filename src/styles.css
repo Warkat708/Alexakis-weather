@@ -1,0 +1,62 @@
+.weather-app {
+  border: 1px solid #dadde1;
+  padding: 20px;
+  border-radius: 6px;
+  margin: 20px auto;
+  max-width: 630px;
+}
+.favourites {
+  padding-bottom: 25px;
+}
+
+h1 {
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(135, 135, 135);
+  padding-top: 15px;
+  margin-bottom: 0px;
+}
+li {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(135, 135, 135);
+  list-style: none;
+  line-height: 1.1;
+}
+ul {
+  padding: 0;
+  margin-bottom: 15px;
+}
+.temperature {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1;
+}
+.units {
+  position: relative;
+  top: -18px;
+}
+.btn-primary {
+  background-color: rgb(133, 133, 133);
+  border-color: rgb(240, 227, 227);
+  font-size: 13px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all 200ms ease-in-out;
+}
+.btn-primary:hover {
+  background-color: white;
+  color: grey;
+  border: 1px solid grey;
+}
+.sixDays {
+  padding: 15px;
+  color: grey;
+  font-size: 15px;
+  font-weight: bolder;
+}
+.btn-light:hover {
+  background-color: rgb(175, 172, 172);
+  color: white;
+  border: 1px solid grey;
+}
