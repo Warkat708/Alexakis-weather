@@ -49,6 +49,19 @@ ul {
   color: grey;
   border: 1px solid grey;
 }
+.btn-success {
+  background-color: darkgreen;
+  border-color: rgb(240, 227, 227);
+  font-size: 13px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: all 200ms ease-in-out;
+}
+.btn-success:hover {
+  background-color: white;
+  color: grey;
+  border: 1px solid grey;
+}
 .sixDays {
   padding: 15px;
   color: grey;

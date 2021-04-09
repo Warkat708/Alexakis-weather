@@ -51,6 +51,8 @@ function displayWeather(response) {
   let iconElement = document.querySelector("#icon");
   let humidityElement = document.querySelector("#humidity");
 
+  celsiusTemperature=response.data.main.temp;
+
 descriptionElement.innerHTML = response.data.weather[0].main; 
 windElement.innerHTML = Math.round(response.data.wind.speed);
 degreesElement.innerHTML = Math.round(response.data.main.temp);
@@ -73,8 +75,9 @@ form.addEventListener("click", foreground);
 
 function faren (event) {
   event.preventDefault (); 
-let data = document.querySelector("#degrees"); 
-data.innerHTML = "60";
+let temperatureElement = document.querySelector("#degrees"); 
+let farenheitTemperature=(celsiusTemperature*9)/5 +32;
+temperatureElement.innerHTML = Math.round(farenheitTemperature);
 }
 let toggle = document.querySelector ("#farenheit-link");
 toggle.addEventListener ("click", faren);
@@ -97,8 +100,6 @@ let data = document.querySelector("#degrees");
 data.innerHTML = response.data.main.temp;
 }
 
-let toggleBack = document.querySelector ("#celsius-link");
-toggleBack.addEventListener ("click", celsius);
 
 
 
@@ -118,3 +119,15 @@ function getCurrentLocation(event) {
 
 let currentLocationButton = document.querySelector("#currentButton");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+function displayFarenheitTemperature(event) {
+  event.preventDefault(); 
+  let farenheitTemperature = (celsiusTemperature*9)/5 +32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML=farenheitTemperature;
+}
+
+let celsiusTemperature=null; 
+
+let farenheitLink=document.querySelector("#farenheit-link");
+farenheitLink.addEventListener("click", displayFarenheitTemperature);
