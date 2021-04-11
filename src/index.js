@@ -2,7 +2,10 @@ let now = new Date ();
 let day = now.getDay ();
 let number = now.getDate ();
 let hour = now.getHours ();
-let min = now.getMinutes (); 
+let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
   let days = [
     "Sunday",
@@ -15,8 +18,7 @@ let min = now.getMinutes ();
   ];
 
 let today = days[now.getDay()];
-let minAdjust = (`0${min}`); 
-let beautiful = `${today} ${hour}:${min}`
+let beautiful = `${today} ${hour}:${minutes}`
 
 date = document.querySelector("#currentTime")
 date.innerHTML = beautiful;
@@ -141,6 +143,51 @@ function getCurrentLocation(event) {
 
 let currentLocationButton = document.querySelector("#currentButton");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+function getGrimsby(event) {
+  event.preventDefault(); 
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=53.5654&lon=-0.0755&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+let grimsbyLocationButton = document.querySelector("#grimsby");
+grimsbyLocationButton.addEventListener("click", getGrimsby);
+
+function getPittsburgh(event) {
+  event.preventDefault(); 
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=40.4406&lon=-79.9959&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+let pittsburghLocationButton = document.querySelector("#pittsburgh");
+pittsburghLocationButton.addEventListener("click", getPittsburgh);
+
+function getBristol(event) {
+  event.preventDefault(); 
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=51.4552&lon=-2.5967&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+
+let bristolLocationButton = document.querySelector("#bristol");
+bristolLocationButton.addEventListener("click", getBristol);
+
+function getLondon(event) {
+  event.preventDefault(); 
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=51.5085&lon=-0.1257&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+let londonLocationButton = document.querySelector("#london");
+londonLocationButton.addEventListener("click", getLondon);
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
